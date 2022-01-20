@@ -78,14 +78,12 @@ function App() {
         >
           Get User
         </button>
-        {users.map((user) => {
-          return (
-            <h1>
-              {user.id} {user.firstName} {user.lastName} {user.age} {user.tc}{" "}
-              {user.reason} {user.address}{" "}
-            </h1>
-          );
-        })}
+        {users.map((user) => (
+          <h1>
+            {user.id} {user.firstName} {user.lastName} {user.age} {user.tc}{" "}
+            {user.reason} {user.address}{" "}
+          </h1>
+        ))}
       </div>
     </div>
   );

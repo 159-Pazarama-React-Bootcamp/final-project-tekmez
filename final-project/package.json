@@ -8,16 +8,20 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.25.0",
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
-    "react-scripts": "5.0.0"
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint \"*/**/*.{js,}\" --quiet --fix"
   },
   "eslintConfig": {
     "extends": "react-app"

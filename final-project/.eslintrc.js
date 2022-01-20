@@ -6,7 +6,6 @@ module.exports = {
     "extends": [
         "airbnb", 
         "prettier", 
-        "plugin:node/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -25,6 +24,9 @@ module.exports = {
         "func-names": "off",
         "no-process-exit": "off",
         "object-shorthand": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "no-param-reassign": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/prop-types": "off"
     }
 };
