@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import validationSchema from "../../Schema/ValidationSchema";
 import TextField from "../TextField";
 import { postUser } from "../../Redux/Services";
@@ -8,6 +9,7 @@ import "./index.css";
 
 function Form() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <Formik
       initialValues={{
@@ -20,7 +22,7 @@ function Form() {
       }}
       validationSchema={validationSchema}
       onSubmit={(values) => {
-        dispatch(postUser(values));
+        dispatch(postUser(values)).then(() => navigate("/SuccessfulPage"));
         console.log(values);
       }}
     >

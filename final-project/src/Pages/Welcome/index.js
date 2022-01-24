@@ -34,6 +34,9 @@ function Welcome() {
           icon={faSearch}
           classNameBtn="btn"
           className="search"
+          onClick={() => {
+            navigate("/SearchFormPage");
+          }}
         />
         <Button
           text="Admin"
