@@ -25,24 +25,21 @@ function Welcome() {
           icon={faFileMedical}
           classNameBtn="btn"
           className="medical"
-          onClick={() => {
-            navigate("/CreateForm");
-          }}
+          onClick={() => navigate("/CreateForm")}
         />
         <Button
           text="Find Form"
           icon={faSearch}
           classNameBtn="btn"
           className="search"
-          onClick={() => {
-            navigate("/SearchFormPage");
-          }}
+          onClick={() => navigate("/SearchFormPage")}
         />
         <Button
           text="Admin"
           icon={faUserShield}
           classNameBtn="btn"
           className="admin"
+          onClick={() => navigate("/AdminPage")}
         />
       </div>
     </div>

@@ -30,9 +30,7 @@ function Menu() {
           icon={faHome}
           classNameBtn="home-btn"
           className="home-icon"
-          onClick={() => {
-            navigate("/");
-          }}
+          onClick={() => navigate("/")}
         />
       </div>
       <div className="admin-panel">
@@ -41,6 +39,7 @@ function Menu() {
           icon={faUserShield}
           className="admin-icon"
           classNameBtn="admin-btn"
+          onClick={() => navigate("/AdminPage")}
         />
       </div>
     </div>
