@@ -8,6 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import TextField from "../TextField";
 import "./index.css";
+import Button from "../Button";
 
 function Menu() {
   const navigate = useNavigate();
@@ -25,21 +26,22 @@ function Menu() {
         </button>
       </div>
       <div className="home">
-        <button
-          type="button"
-          className="home-btn"
+        <Button
+          icon={faHome}
+          classNameBtn="home-btn"
+          className="home-icon"
           onClick={() => {
             navigate("/");
           }}
-        >
-          <FontAwesomeIcon icon={faHome} className="home-icon" />
-        </button>
+        />
       </div>
       <div className="admin-panel">
-        <button type="button" className="admin-btn">
-          Admin
-          <FontAwesomeIcon icon={faUserShield} className="admin-icon" />
-        </button>
+        <Button
+          text="Admin"
+          icon={faUserShield}
+          className="admin-icon"
+          classNameBtn="admin-btn"
+        />
       </div>
     </div>
   );

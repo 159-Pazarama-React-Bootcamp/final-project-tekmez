@@ -93,6 +93,7 @@ function Form() {
             {errors.address && touched.address && (
               <span className="ad-error">{errors.address}</span>
             )}
+            <TextField type="file" name="file" className="file-input" />
             <button type="submit" className="apply-btn">
               APPLY NOW
             </button>

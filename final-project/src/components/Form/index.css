@@ -24,7 +24,7 @@
 .input:focus{
     border-bottom: 1px solid #FF3CAC;
 }
-.apply-btn {
+.apply-btn, input[type=file]::file-selector-button {
     width: 250px;
     height: 50px;
     border-radius: 25px;
@@ -38,12 +38,12 @@
     transition: 0.4s;
 }
   
-.apply-btn:hover {
+.apply-btn:hover, input[type=file]::file-selector-button:hover {
     box-shadow: none;
     color: white;
     cursor: pointer;
-    transform: scale(1.1);
-  }
+    border-radius: 5px;
+}
 .f-error, .l-error, .a-error, .t-error, .r-error, .ad-error{
     position: absolute;
     margin-top: 6.5em;
@@ -59,4 +59,8 @@
 }
 .r-error, .ad-error{
     margin-top: 25.5em;
+}
+input[type=file]{
+    height: 50px;
+    width: 250px;
 }
