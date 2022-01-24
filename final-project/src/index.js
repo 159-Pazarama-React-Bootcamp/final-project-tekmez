@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { Provider } from "react-redux";
 import store from "./Redux/Store";
-import Form from "./components/Form";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Form />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

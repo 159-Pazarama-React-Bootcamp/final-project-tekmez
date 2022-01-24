@@ -27,6 +27,16 @@ module.exports = {
         "class-methods-use-this": "off",
         "no-param-reassign": 0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/prop-types": "off"
-    }
+        "react/prop-types": "off",
+        "jsx-a11y/label-has-associated-control": ["error", {
+            "required": {
+              "some": ["nesting", "id"]
+            }
+          }],
+          "jsx-a11y/label-has-for": ["error", {
+            "required": {
+              "some": ["nesting", "id"]
+            }
+          }]
+        },
 };
