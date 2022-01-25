@@ -2,7 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import validationSchema from "../../Schema/ValidationSchema";
+import { validationSchema } from "../../Schema/ValidationSchema";
 import TextField from "../TextField";
 import { postUser } from "../../Redux/Services";
 import "./index.css";

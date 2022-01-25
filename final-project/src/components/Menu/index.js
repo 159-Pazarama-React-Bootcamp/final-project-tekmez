@@ -39,7 +39,7 @@ function Menu() {
           icon={faUserShield}
           className="admin-icon"
           classNameBtn="admin-btn"
-          onClick={() => navigate("/AdminPage")}
+          onClick={() => navigate("/LoginPage")}
         />
       </div>
     </div>

@@ -47,12 +47,12 @@
 .f-error, .l-error, .a-error, .t-error, .r-error, .ad-error{
     position: absolute;
     margin-top: 6.5em;
-    margin-right: 26em;
+    margin-right: 22em;
     color: #FF3CAC;
 }
 .l-error, .t-error, .ad-error{
-    margin-left: 9em;
-    margin-right: 0em;
+    margin-left: 13em;
+    margin-right: 0;
 }
 .a-error, .t-error{
     margin-top: 16em;
@@ -63,4 +63,11 @@
 input[type=file]{
     height: 50px;
     width: 250px;
+}
+.a-error{
+    margin-left: 4em;
+    margin-right: 26em;
+}
+.t-error{
+    margin-left: 13em;
 }

@@ -39,7 +39,7 @@ function Welcome() {
           icon={faUserShield}
           classNameBtn="btn"
           className="admin"
-          onClick={() => navigate("/AdminPage")}
+          onClick={() => navigate("/LoginPage")}
         />
       </div>
     </div>
