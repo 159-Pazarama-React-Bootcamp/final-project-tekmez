@@ -31,7 +31,7 @@
 .welcome-title, .welcome-text{
     width: 450px;
     height: 50px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 15px;
     text-align: center;
 }

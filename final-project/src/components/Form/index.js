@@ -19,6 +19,7 @@ function Form() {
         tc: "",
         reason: "",
         address: "",
+        date: new Date().toLocaleDateString(),
       }}
       validationSchema={validationSchema}
       onSubmit={(values) => {

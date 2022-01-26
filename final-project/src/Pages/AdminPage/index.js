@@ -1,15 +1,23 @@
+import React, { useEffect } from "react";
 import {
   faSignInAlt,
   faUserAstronaut,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { getUser } from "../../Redux/Services";
 import Button from "../../components/Button";
 import "./index.css";
 
 function AdminPage() {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.users.user);
+  console.log(users);
   const navigate = useNavigate();
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
   return (
     <div className="admin-top-container">
       <div className="admin-navbar">
@@ -31,11 +39,15 @@ function AdminPage() {
           <h2>Date</h2>
           <h2>Status</h2>
         </div>
-        <div className="list" />
-        <div className="list" />
-        <div className="list" />
-        <div className="list" />
-        <div className="list" />
+        {users.map((user) => (
+          <div className="list">
+            <p className="p">{user.firstName}</p>
+            <p className="p">{user.lastName}</p>
+            <p className="p">{user.age}</p>
+            <p className="p">{user.date}</p>
+            <p className="p">{user.status}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
