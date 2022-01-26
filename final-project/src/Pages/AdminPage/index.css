@@ -49,6 +49,8 @@
 .user-form-list{
     display: flex;
     justify-content: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .list-navbar{
     width: 750px;

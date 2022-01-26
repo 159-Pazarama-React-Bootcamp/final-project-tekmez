@@ -1,34 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../../Redux/Services";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
 import "./index.css";
+import Info from "../../components/UserInfo";
 
 function SearchFormPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [number, setNumber] = useState("");
+  const info = useSelector((state) => state.users.user);
+  const handleChange = (event) => {
+    setNumber(event.target.value);
+  };
+  const getInfo = () => dispatch(getUser(number));
+  const keyPress = (event) => {
+    if (event.key === "Enter") {
+      dispatch(getUser(number));
+    }
+  };
   return (
-    <div className="search-container">
-      <div className="input-search-container">
-        <TextField
-          type="text"
-          name="search"
-          placeholder="Search"
-          className="searchPage-input"
+    <div className="search-top-container">
+      <div className="search-container">
+        <div className="input-search-container">
+          <TextField
+            type="text"
+            name="search"
+            placeholder="Search"
+            className="searchPage-input"
+            onChange={handleChange}
+            value={number}
+            onKeyPress={keyPress}
+          />
+          <button type="button" onClick={getInfo} className="search-btn">
+            <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          </button>
+        </div>
+        <Button
+          icon={faHome}
+          onClick={() => navigate("/")}
+          classNameBtn="home-btn"
+          className="home-icon"
         />
-        <button type="button" className="search-btn">
-          <FontAwesomeIcon icon={faSearch} className="search-icon" />
-        </button>
       </div>
-      <Button
-        icon={faHome}
-        classNameBtn="home-btn"
-        className="home-icon"
-        onClick={() => {
-          navigate("/");
-        }}
-      />
+      {info.map((user) => (
+        <div>
+          <Info user={user} />
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,20 +1,22 @@
-.search-container{
-    width: 650px;
-    height: 440px;
-    border-radius: 25px;
+.search-top-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+}
+.search-container{
+    width: 450px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4.5px );
     -webkit-backdrop-filter: blur( 4.5px );
+    margin-bottom: 35px;
 }
 .input-search-container{
     background: #fff;
     height: 50px;
-    border-radius: 25px;
+    border-radius: 15px;
     display: flex;
 }
 .searchPage-input{
