@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+/* eslint-disable */
+import React, { useEffect, useState } from "react";
 import {
   faSignInAlt,
   faUserAstronaut,
@@ -9,21 +10,31 @@ import { useNavigate } from "react-router-dom";
 import { getUser } from "../../Redux/Services";
 import Button from "../../components/Button";
 import "./index.css";
+import AdminListInfo from "../../components/AdminListInfo";
+import PersonInfo from "../../components/PersonInfo";
 
 function AdminPage() {
-  const dispatch = useDispatch();
   const users = useSelector((state) => state.users.user);
-  console.log(users);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [person, setPerson] = useState({});
+  const [show, setShow] = useState(false);
   useEffect(() => {
     dispatch(getUser());
   }, []);
+  const click = (event) => {
+    const personInfo = users.find(
+      (user) => user.ticketNumber == event.target.id
+    );
+    setPerson(personInfo);
+    setShow(true);
+  };
   return (
     <div className="admin-top-container">
       <div className="admin-navbar">
         <div className="navbar-title">
           <FontAwesomeIcon icon={faUserAstronaut} className="nav-icon" />
-          <h2 className="title">Kodluyoruz</h2>
+          <h2 className="admin-title">Kodluyoruz</h2>
         </div>
         <Button
           classNameBtn="logout-btn"
@@ -31,24 +42,8 @@ function AdminPage() {
           onClick={() => navigate("/")}
         />
       </div>
-      <div className="user-form-list">
-        <div className="list-navbar">
-          <h2>Name</h2>
-          <h2>Surname</h2>
-          <h2>Age</h2>
-          <h2>Date</h2>
-          <h2>Status</h2>
-        </div>
-        {users.map((user) => (
-          <div className="list">
-            <p className="p">{user.firstName}</p>
-            <p className="p">{user.lastName}</p>
-            <p className="p">{user.age}</p>
-            <p className="p">{user.date}</p>
-            <p className="p">{user.status}</p>
-          </div>
-        ))}
-      </div>
+      <AdminListInfo users={users} onClick={click} />
+      {show ? <PersonInfo person={person} /> : null}
     </div>
   );
 }
