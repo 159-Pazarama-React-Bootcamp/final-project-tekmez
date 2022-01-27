@@ -39,7 +39,12 @@ function AdminPage() {
         <Button
           classNameBtn="logout-btn"
           icon={faSignInAlt}
-          onClick={() => navigate("/")}
+          onClick={() => {
+            localStorage.removeItem("admin");
+            localStorage.removeItem("password");
+            navigate("/");
+          } 
+          }
         />
       </div>
       <AdminListInfo users={users} onClick={click} />

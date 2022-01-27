@@ -16,7 +16,9 @@ function LoginPage() {
         password: "",
       }}
       validationSchema={loginValidationSchema}
-      onSubmit={() => {
+      onSubmit={(value) => {
+        localStorage.setItem("admin", value.admin);
+        localStorage.setItem("password", value.password);
         navigate("/AdminPage");
       }}
     >

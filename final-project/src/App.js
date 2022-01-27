@@ -7,6 +7,7 @@ import SearchFormPage from "./Pages/SearchFormPage";
 import AdminPage from "./Pages/AdminPage";
 import "./App.css";
 import LoginPage from "./Pages/Login Page";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -17,7 +18,14 @@ function App() {
         <Route exact path="/SuccessfulPage" element={<SuccessfulPage />} />
         <Route exact path="/SearchFormPage" element={<SearchFormPage />} />
         <Route exact path="/LoginPage" element={<LoginPage />} />
-        <Route exact path="/AdminPage" element={<AdminPage />} />
+        <Route
+          path="/AdminPage"
+          element={
+            <PrivateRoute>
+              <AdminPage />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
