@@ -25,3 +25,11 @@ export const postUser = createAsyncThunk("user/postUser", async (info) => {
   });
   return response.data;
 });
+
+export const editUser = async (status, answer, id) => {
+  const response = await axios.put(`${process.env.REACT_APP_API_URL}/${id}`, {
+    status: status,
+    answer: answer,
+  });
+  return response.data;
+};

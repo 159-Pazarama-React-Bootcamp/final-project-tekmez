@@ -1,17 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { editUser } from "../../Redux/Services";
 import Button from "../Button";
 import "./index.css";
 
-function PersonInfo() {
+function PersonInfo(props) {
+  const { person } = props;
+  const [answer, setAnswer] = useState("");
+  const [status2, setStatus2] = useState("");
+  const handleChange = (event) => {
+    setAnswer(event.target.value);
+  };
   return (
     <div className="person-update">
-      <Button text="Reject" classNameBtn="rejected-btn" />
-      <Button text="Approve" classNameBtn="rejected-btn" />
+      <Button
+        text="Reject"
+        onClick={() => {
+          editUser("Rejected", person.id);
+          setStatus2("Rejected");
+        }}
+        classNameBtn="rejected-btn"
+      />
+      <Button
+        text="Approve"
+        onClick={() => {
+          editUser("Approved", person.id);
+          setStatus2("Approved");
+        }}
+        classNameBtn="rejected-btn"
+      />
       <textarea
         className="text-area"
         placeholder="You can enter the answer you want to write here."
+        onChange={handleChange}
+        value={answer}
       />
-      <Button text="Update" classNameBtn="rejected-btn" />
+      <Button
+        text="Update"
+        onClick={() => {
+          editUser(status2, answer, person.id);
+        }}
+        classNameBtn="rejected-btn"
+      />
     </div>
   );
 }

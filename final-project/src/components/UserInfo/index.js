@@ -26,6 +26,9 @@ function Info({ user }) {
       <h2 className="title">
         Status: <span className="info">{user.status}</span>
       </h2>
+      <h2 className="title">
+        Answer: <span className="info">{user.answer}</span>
+      </h2>
     </div>
   );
 }
