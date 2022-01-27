@@ -1,12 +1,10 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
   faUserShield,
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import TextField from "../TextField";
 import "./index.css";
 import Button from "../Button";
 
@@ -15,15 +13,12 @@ function Menu() {
   return (
     <div className="menu-top-container">
       <div className="search-form">
-        <TextField
-          type="text"
-          name="search"
-          placeholder="Search"
-          className="search-input"
+        <Button
+          icon={faSearch}
+          className="search-icon"
+          classNameBtn="search-btn"
+          onClick={() => navigate("/SearchFormPage")}
         />
-        <button type="button" className="search-btn">
-          <FontAwesomeIcon icon={faSearch} className="search-icon" />
-        </button>
       </div>
       <div className="home">
         <Button

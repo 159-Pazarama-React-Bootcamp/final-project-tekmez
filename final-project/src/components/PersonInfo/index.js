@@ -15,7 +15,6 @@ function PersonInfo(props) {
       <Button
         text="Reject"
         onClick={() => {
-          editUser("Rejected", person.id);
           setStatus2("Rejected");
         }}
         classNameBtn="rejected-btn"
@@ -23,7 +22,6 @@ function PersonInfo(props) {
       <Button
         text="Approve"
         onClick={() => {
-          editUser("Approved", person.id);
           setStatus2("Approved");
         }}
         classNameBtn="rejected-btn"

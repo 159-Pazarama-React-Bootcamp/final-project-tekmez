@@ -1,9 +1,9 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../../Redux/Services";
+import { useSelector } from "react-redux";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
 import "./index.css";
@@ -11,16 +11,19 @@ import Info from "../../components/UserInfo";
 
 function SearchFormPage() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [number, setNumber] = useState("");
+  const [oneUser, setOneUser] = useState({});
   const info = useSelector((state) => state.users.user);
   const handleChange = (event) => {
     setNumber(event.target.value);
   };
-  const getInfo = () => dispatch(getUser(number));
+  const one = info.find((user) => user.ticketNumber == number);
+  const getInfo = () => {
+    setOneUser(one);
+  };
   const keyPress = (event) => {
     if (event.key === "Enter") {
-      dispatch(getUser(number));
+      setOneUser(one);
     }
   };
   return (
@@ -47,11 +50,9 @@ function SearchFormPage() {
           className="home-icon"
         />
       </div>
-      {info.map((user) => (
-        <div>
-          <Info user={user} />
-        </div>
-      ))}
+      <div>
+        <Info user={oneUser} />
+      </div>
     </div>
   );
 }

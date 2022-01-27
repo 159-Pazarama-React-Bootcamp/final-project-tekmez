@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   faFileMedical,
   faSearch,
   faUserShield,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { getUser } from "../../Redux/Services";
 import Button from "../../components/Button";
 import "./index.css";
 
 function Welcome() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
   return (
     <div className="welcome-top-container">
       <div className="welcome-text-container">

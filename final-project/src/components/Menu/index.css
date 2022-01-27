@@ -11,22 +11,6 @@
 .admin-panel{
     margin-right: 0;
 }
-.search-input{
-    font-size: 18px;
-    line-height: 16px;
-    box-sizing: border-box;
-    width: 110px;
-    height: 100%;
-    padding: 10px;
-    opacity: 0.9;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    transition: width 0.1s;
-}
-.search-input:focus{
-    width: 200px;
-}
 .search-btn, .admin-btn, .home-btn{
     border: 0;
     background: 0;
@@ -48,4 +32,7 @@
 }
 .admin-icon, .home-icon{
     padding-left: 1em;
+}
+.search-icon{
+    margin-left: 1em;
 }
