@@ -1,6 +1,8 @@
 ## Bitirme projesi
 ### Başvuru / ticket yönetim sistemi
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a29536c-2d7c-475a-844b-e9d103c3ef14/deploy-status)](https://app.netlify.com/sites/mellonform/deploys) [mellonform.netlify.app](mellonform.netlify.app)
+
 ### Özellikler
 
 ------------
