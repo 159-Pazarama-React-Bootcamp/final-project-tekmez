@@ -24,7 +24,6 @@ function Form() {
       validationSchema={validationSchema}
       onSubmit={(values) => {
         dispatch(postUser(values)).then(() => navigate("/SuccessfulPage"));
-        console.log(values);
       }}
     >
       {({ handleSubmit, handleChange, values, errors, touched }) => (
