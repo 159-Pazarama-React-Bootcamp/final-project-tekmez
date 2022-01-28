@@ -12,19 +12,21 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.25.0",
     "formik": "^2.2.9",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "jest-environment-jsdom": "^27.4.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "regenerator-runtime": "^0.13.9",
     "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint \"*/**/*.{js,}\" --quiet --fix"
+    "lint": "eslint \"*/**/*.{js,}\" --quiet --fix",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +44,15 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-plugin-transform-export-extensions": "6.22.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-jest": "^27.4.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "3.6.2",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-node": "^4.1.0",
@@ -52,6 +63,17 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.1"
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "react-test-renderer": "^17.0.2"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>src/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "testEnvironment": "jsdom"
   }
 }

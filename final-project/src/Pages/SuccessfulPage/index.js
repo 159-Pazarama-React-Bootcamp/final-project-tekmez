@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../../Redux/Services";
+import { useSelector } from "react-redux";
 import Button from "../../components/Button";
 import "./index.css";
 
 function SuccessfulPage() {
   const [ticketNum, setTicketNum] = useState("");
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  useEffect(() => dispatch(getUser()), []);
   const ticketNumber = async () => {
     const number = await useSelector((state) => state.users.user);
     const numArr = [...number];

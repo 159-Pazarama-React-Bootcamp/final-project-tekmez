@@ -35,7 +35,9 @@ function PersonInfo(props) {
       <Button
         text="Update"
         onClick={() => {
-          editUser(status2, answer, person.id);
+          editUser(status2, answer, person.id).then(() =>
+            window.location.reload()
+          );
         }}
         classNameBtn="rejected-btn"
       />

@@ -6,7 +6,7 @@ import Welcome from "./Pages/Welcome";
 import SearchFormPage from "./Pages/SearchFormPage";
 import AdminPage from "./Pages/AdminPage";
 import "./App.css";
-import LoginPage from "./Pages/Login Page";
+import LoginPage from "./Pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {

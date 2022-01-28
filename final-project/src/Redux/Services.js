@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import regenerator from "regenerator-runtime";
 import axios from "axios";
 
 export const getUser = createAsyncThunk(
